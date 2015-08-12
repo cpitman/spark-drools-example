@@ -4,7 +4,13 @@ Spark Drools Example
 (Work In Progress)
 
 This project shows a simple example of how to integrate drools into an 
-Apache Spark job.
+Apache Spark job. The steps are pretty simple:
+
+1. Load a knowledge base using any sources supported by drools
+2. Broadcast the knowledge base to all workers
+3. Use the broadcasted rules within the process
+
+Broadcasting the rules ensures that they are only loaded and compiled once, sent to workers in their compiled form, and then reused throughout the job.
 
 
 Setup
