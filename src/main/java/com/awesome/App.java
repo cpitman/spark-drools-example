@@ -30,11 +30,11 @@ public class App {
     KieBase rules = loadRules();
     Broadcast<KieBase> broadcastRules = sc.broadcast(rules);
 
-    JavaRDD<Applicant> logData = sc.parallelize(inputData);
+    JavaRDD<Applicant> applicants = sc.parallelize(inputData);
 
-    long numApproved = logData.map( a -> applyRules(broadcastRules.value(), a) )
-                              .filter( a -> a.isApproved() )
-                              .count();
+    long numApproved = applicants.map( a -> applyRules(broadcastRules.value(), a) )
+                                 .filter( a -> a.isApproved() )
+                                 .count();
 
     System.out.println("Number of applicants approved: " + numApproved);
   }
