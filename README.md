@@ -1,5 +1,4 @@
-Spark Drools Example
-====================
+#Spark Drools Example#
 
 (Work In Progress)
 
@@ -16,8 +15,7 @@ Broadcasting the rules ensures that they are only loaded and compiled once, sent
 - [Vagrant](https://www.vagrantup.com/downloads.html) 
 - [VirtualBox (or similar virtualizer)](https://www.virtualbox.org/wiki/Downloads)
 
-Setup
------
+##Setup##
 The included Vagrantfile(www.vagrantup.com) will spin up a VM with 
 spark and a Java 1.8 build environment. 
 
@@ -30,7 +28,8 @@ If you are unable to ssh on your machine, make sure the ssh server is [started](
 
 Once ssh'ed into vagrant you
 can run this example by doing the following:
-
-    cd /vagrant
-    mvn package
-    /opt/spark-1.4.1-bin-hadoop2.6/bin/spark-submit --class "com.awesome.App" --master local[4] target/SparkDroolsExample-1.0-SNAPSHOT.jar
+```
+cd /vagrant
+mvn package
+/opt/spark-1.4.1-bin-hadoop2.6/bin/spark-submit --class "com.awesome.App" --master local[4] target/SparkDroolsExample-1.0-SNAPSHOT.jar
+```
